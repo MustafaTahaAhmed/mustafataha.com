@@ -26,7 +26,13 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -51,9 +57,6 @@
       ]
     }
     </script>
-   
-    
-    
 </head>
 <body>
     <div class="animated-bg" id="particles">
@@ -61,7 +64,19 @@
     </div>
 
     <nav>
-        <ul>
+        <a href="#home" class="nav-brand" aria-label="Go to Homepage">
+            <div class="north-compass">
+                <div class="compass-ring"></div>
+                <div class="compass-needle"></div>
+                <span class="compass-n">N</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#gis">Data Expertise</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -81,7 +96,6 @@
     <section id="gis">
         <h2>Data & Information Systems Expertise</h2>
         <div class="gis-showcase">
-            <h3>Professional Data Management Services</h3>
             <div class="gis-content">
                 
                 <div class="gis-feature">
@@ -97,8 +111,8 @@
                 </div>
 
                 <div class="gis-feature">
-                     <div class="gis-icon">📝</div>
-                     <h4>Data Collection & QA</h4>
+                      <div class="gis-icon">📝</div>
+                      <h4>Data Collection & QA</h4>
                     <p>Designing robust digital data collection tools (Kobo, MS Forms, SurveyMonkey) and implementing rigorous SQL/Python-based routines for data quality assurance and validation.</p>
                  </div>
 
@@ -185,9 +199,11 @@
         <h2>Let's Connect</h2>
         <div class="contact-container">
             <p>Ready to collaborate on your next GIS, data visualization, or spatial analysis project? Fill out the form below and I'll get back to you within 24 hours.</p>
+        </br>
             <a href="https://forms.gle/pQQqocSQy4AqphpQ9" target="_blank" rel="noopener noreferrer" class="form-button">
                 Open Contact Form →
             </a>
+            
         </div>
     </section>
 
@@ -195,8 +211,7 @@
         <p>&copy; 2026 Mustafa Taha Ahmed - GIS Analyst & Data Visualization Expert</p>
     </footer>
 
- <script src="script.js" defer></script> 
+    <script src="script.js" defer></script> 
 
 </body>
-
 </html>
