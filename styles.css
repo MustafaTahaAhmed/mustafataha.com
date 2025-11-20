@@ -155,14 +155,15 @@ nav a:hover { color: var(--primary); }
     z-index: 1002;
     pointer-events: auto;
 }
-.mobile-toggle span {
-    display: block; width: 25px; height: 2px; background: var(--primary); margin: 5px 0; transition: 0.3s;
-}
+
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     nav { height: 70px; }
     .mobile-toggle { display: block; }
+      nav ul.mobile-visible {
+        pointer-events: auto !important;
+    }
     /* Mobile Menu */
     nav ul {
         position: fixed; top: 0; left: 0; width: 250px; height: 100vh;
@@ -185,16 +186,11 @@ nav a:hover { color: var(--primary); }
     /* Open State */
     nav ul.mobile-visible { transform: translateX(0); }
     
-    
     /* Force Nav Visible when Menu Open */
     nav.menu-active { background: rgba(10, 15, 28, 0.95) !important; }
     nav.menu-active ul { transform: translateX(0) !important; opacity: 1 !important; }
 }
-@media (max-width: 768px) {
-    nav ul.mobile-visible {
-        pointer-events: auto !important;
-    }
-}
+
 /* --- SECTIONS & CONTENT --- */
 section { padding: 6rem 8%; max-width: 1400px; margin: 0 auto; }
 h2 { font-family: var(--font-heading); font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--text-main); }
@@ -227,8 +223,3 @@ h2 { font-family: var(--font-heading); font-size: 2.5rem; text-align: center; ma
 /* Contact & Footer */
 .contact-container { text-align: center; max-width: 700px; margin: 0 auto; }
 footer { text-align: center; padding: 3rem; background: #020617; color: var(--text-muted); border-top: var(--glass-border); }
-
-
-
-
-
