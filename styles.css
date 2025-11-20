@@ -185,10 +185,6 @@ nav a:hover { color: var(--primary); }
     /* Open State */
     nav ul.mobile-visible { transform: translateX(0); }
     
-    /* Active Burger Animation */
-    .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .mobile-toggle.active span:nth-child(2) { opacity: 0; }
-    .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
     
     /* Force Nav Visible when Menu Open */
     nav.menu-active { background: rgba(10, 15, 28, 0.95) !important; }
@@ -231,6 +227,7 @@ h2 { font-family: var(--font-heading); font-size: 2.5rem; text-align: center; ma
 /* Contact & Footer */
 .contact-container { text-align: center; max-width: 700px; margin: 0 auto; }
 footer { text-align: center; padding: 3rem; background: #020617; color: var(--text-muted); border-top: var(--glass-border); }
+
 
 
 
