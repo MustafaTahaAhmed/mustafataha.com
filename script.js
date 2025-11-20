@@ -58,74 +58,46 @@
         }
     });
 
-    // --- 4. Mobile Menu Logic (FIXED FOR IPHONE) ---
+    // --- 4. Mobile Menu Logic (IPHONE FIX - SIMPLE VERSION) ---
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('#nav-links');
     const navLinksItems = document.querySelectorAll('#nav-links li a');
 
     if (mobileToggle && navLinks) {
-        // Function to close menu
-        const closeMenu = () => {
+        // Simple toggle function
+        function toggleMenu() {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('mobile-visible');
+            nav.classList.toggle('menu-active');
+            document.body.style.overflow = navLinks.classList.contains('mobile-visible') ? 'hidden' : '';
+        }
+
+        // Close menu function
+        function closeMenu() {
             mobileToggle.classList.remove('active');
             navLinks.classList.remove('mobile-visible');
             nav.classList.remove('menu-active');
             document.body.style.overflow = '';
-        };
+        }
 
-        // Function to open menu
-        const openMenu = () => {
-            mobileToggle.classList.add('active');
-            navLinks.classList.add('mobile-visible');
-            nav.classList.add('menu-active');
-            document.body.style.overflow = 'hidden';
-        };
-
-        // Toggle menu on button click/touch
-        mobileToggle.addEventListener('click', (e) => {
-            e.preventDefault();
+        // Toggle on click - works for both desktop and mobile
+        mobileToggle.onclick = function(e) {
             e.stopPropagation();
-            
-            const isActive = mobileToggle.classList.contains('active');
-            
-            if (isActive) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
-
-        // Also handle touchend for better mobile support
-        mobileToggle.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isActive = mobileToggle.classList.contains('active');
-            
-            if (isActive) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        }, { passive: false });
+            toggleMenu();
+        };
 
         // Close when clicking a link
         navLinksItems.forEach(link => {
-            link.addEventListener('click', closeMenu);
+            link.onclick = closeMenu;
         });
 
-        // Close when clicking outside (with touch support)
-        document.addEventListener('click', (e) => {
+        // Close when clicking outside
+        document.onclick = function(e) {
             if (navLinks.classList.contains('mobile-visible') && 
-                !nav.contains(e.target)) {
+                !mobileToggle.contains(e.target) && 
+                !navLinks.contains(e.target)) {
                 closeMenu();
             }
-        });
-
-        document.addEventListener('touchstart', (e) => {
-            if (navLinks.classList.contains('mobile-visible') && 
-                !nav.contains(e.target)) {
-                closeMenu();
-            }
-        });
+        };
     }
 })();
