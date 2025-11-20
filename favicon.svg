@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Dark background circle -->
+  <circle cx="32" cy="32" r="32" fill="#0a0f1c"/>
+  
+  <!-- Outer compass ring (dashed) -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/>
+  
+  <!-- Inner circle background -->
+  <circle cx="32" cy="32" r="18" fill="#1e293b" opacity="0.6"/>
+  
+  <!-- Compass needle (red top, white bottom) -->
+  <g transform="translate(32, 32)">
+    <!-- Red northern half -->
+    <path d="M 0,-16 L -3,0 L 3,0 Z" fill="#ef4444"/>
+    <!-- White southern half -->
+    <path d="M 0,16 L -3,0 L 3,0 Z" fill="#f8fafc"/>
+  </g>
+  
+  <!-- Cardinal directions -->
+  <text x="32" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#06b6d4">M</text>
+  <text x="32" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#94a3b8" opacity="0.6">S</text>
+  <text x="10" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#94a3b8" opacity="0.6">W</text>
+  <text x="54" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#94a3b8" opacity="0.6">E</text>
+  
+  <!-- Center dot -->
+  <circle cx="32" cy="32" r="2" fill="#06b6d4"/>
+</svg>
