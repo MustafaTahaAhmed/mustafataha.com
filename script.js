@@ -80,12 +80,15 @@
             document.body.style.overflow = '';
         }
 
-        // Toggle on click - works for both desktop and mobile
+         // Toggle on click - works for both desktop and mobile
         mobileToggle.onclick = function(e) {
-            e.stopPropagation();
-            toggleMenu();
+         if (window.innerWidth <= 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+        }
+    
         };
-
         // Close when clicking a link
         navLinksItems.forEach(link => {
             link.onclick = closeMenu;
@@ -101,3 +104,4 @@
         };
     }
 })();
+
